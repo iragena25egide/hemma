@@ -43,16 +43,16 @@ const FAQ = () => {
         <h2 className="text-3xl font-bold text-gray-800">
           Frequently Asked <span className="text-customTeal">Questions</span>
         </h2>
-        <p className="text-gray-600 mt-2">
+        <p className="text-gray-600 mt-2 mx-auto w-1/2">
           We know you might have questions about our land restoration and sustainability initiatives. Here are answers to some of the most common inquiries to help you understand how HEMMA Investment can support your goals.
         </p>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 w-[60%] mx-auto">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`rounded-lg overflow-hidden shadow-md ${
+            className={`rounded-lg  overflow-hidden shadow-md ${
               activeIndex === index ? "bg-customTeal" : "bg-white"
             }`}
           >
