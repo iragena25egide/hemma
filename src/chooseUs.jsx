@@ -3,7 +3,7 @@ import { IoCheckbox } from "react-icons/io5";
 
 const WhyChooseUs = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 md:p-16 max-w-screen-xl mx-auto border rounded-lg">
+    <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 md:p-16 max-w-screen-xl mx-auto  rounded-lg">
      
       <div className="flex-shrink-0 w-full md:w-1/2">
         <img
