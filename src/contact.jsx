@@ -2,14 +2,19 @@ import React from 'react';
 
 function ContactUs() {
     return (
-        <div className="flex flex-col items-center py-12 bg-gray-50">
-            <h2 className="text-4xl font-bold text-customTeal mb-4">CONTACT <span className='text-gray-900'>US</span></h2>
-            <p className="text-center text-gray-600 mb-8 max-w-lg">
-                We’re here to answer your questions, discuss your projects, and explore ways to collaborate. Reach out to HEMMA Investment today and let’s work together to restore land and nurture sustainable growth!
-            </p>
-            <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg w-full max-w-5xl">
+        <section className="max-w-7xl  px-6 sm:px-10 lg:px-20 mx-auto py-4 sm:py-4 bg-gray-50">
+            <div className="text-center mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-customTeal">
+                    CONTACT <span className="text-gray-900">US</span>
+                </h2>
+                <p className="text-gray-600 mt-4 max-w-5xl mx-auto">
+                    We’re here to answer your questions, discuss your projects, and explore ways to collaborate. Reach out to HEMMA Investment today and let’s work together to restore land and nurture sustainable growth!
+                </p>
+            </div>
+
+            <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg w-full max-w-6xl mx-auto">
                 <div className="w-full md:w-1/2 rounded-t-lg md:rounded-l-lg md:rounded-t-none overflow-hidden">
-                    <img src="../assets/images/contact.jpg" alt="Hands holding soil" className="object-cover w-full h-64 md:h-full" />
+                    <img src="../assets/images/contact.jpg" alt="Hands holding soil" className="object-cover w-full h-64 md:h-[513px]" />
                 </div>
                 <div className="w-full md:w-1/2 p-8 bg-customTeal rounded-b-lg md:rounded-r-lg md:rounded-b-none">
                     <form className="space-y-6">
@@ -34,23 +39,22 @@ function ContactUs() {
                         <div>
                             <label className="block text-white mb-1" htmlFor="message">Message</label>
                             <textarea 
-    id="message" 
-    className="w-full p-3 rounded-lg border-0 bg-transparent outline-none resize-none text-white ring-1 ring-gray-200 placeholder-white" 
-    placeholder="Enter your message" 
-    rows="5"
-></textarea>
-
+                                id="message" 
+                                className="w-full p-3 rounded-lg border-0 bg-transparent outline-none resize-none text-white ring-1 ring-gray-200 placeholder-white" 
+                                placeholder="Enter your message" 
+                                rows="5"
+                            ></textarea>
                         </div>
                         <button 
                             type="submit" 
-                            className="w-full py-3 bg-gray-200 text-customTeal font-bold rounded-full shadow-md "
+                            className="w-full py-3 bg-gray-200 text-customTeal font-bold rounded-full shadow-md"
                         >
                             Send Us
                         </button>
                     </form>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

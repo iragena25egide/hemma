@@ -33,20 +33,20 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="px-6 sm:px-12 lg:px-20 py-12 bg-white">
+    <section className="max-w-7xl px-6 sm:px-10 lg:px-20 mx-auto py-12 sm:py-16 bg-white rounded-lg">
       <div className="text-center mb-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
           <span>See What They Are Saying </span>
           <span className="text-customTeal">About HEMMA Investment</span>
         </h2>
-        <p className="text-gray-600 mt-2 max-w-xl mx-auto">
+        <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
           At HEMMA Investment, we take pride in the positive impact we've made in the communities
           we serve. Hear from our satisfied clients as they share their experiences with our land
           restoration and sustainable agriculture services.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
