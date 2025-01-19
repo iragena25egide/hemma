@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FAQ = () => {
+
+     React.useEffect(() => {
+        AOS.init({
+          duration: 1000,
+          once: true, 
+        });
+      }, []);
   const [activeIndex, setActiveIndex] = useState(null);
 
   const faqs = [
@@ -36,6 +45,8 @@ const FAQ = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  
+
   return (
     <section className="max-w-7xl px-6 sm:px-10 lg:px-20 mx-auto py-12 sm:py-16 bg-white rounded-lg">
       <div className="text-center mb-12">
@@ -51,6 +62,7 @@ const FAQ = () => {
         {faqs.map((faq, index) => (
           <div
             key={index}
+            data-aos="fade-down"
             className={`rounded-lg overflow-hidden shadow-md transition-colors duration-300 ${
               activeIndex === index ? "bg-customTeal" : "bg-white"
             }`}
@@ -61,17 +73,17 @@ const FAQ = () => {
             >
               <span
                 className={`text-lg font-medium transition-colors ${
-                  activeIndex === index ? "text-green-800" : "text-gray-800"
+                  activeIndex === index ? "text-white font-semibold" : "text-gray-800"
                 }`}
               >
                 {faq.question}
               </span>
-              <span className="text-gray-500 text-xl">
+              <span className={`text-xl ${activeIndex === index ? "text-white" : "text-gray-500"}`}>
                 {activeIndex === index ? <FaAngleUp /> : <FaAngleDown />}
               </span>
             </button>
             {activeIndex === index && (
-              <div className="px-6 pb-4 text-gray-700">
+              <div className="px-6 pb-4 text-gray-300">
                 {faq.answer}
               </div>
             )}

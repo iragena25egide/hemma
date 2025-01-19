@@ -11,6 +11,13 @@ import AboutHemmaInvestment from "./aboutHema"
 import Navbar from "./navbar"
 import AboutContent from "./aboutSection"
 import Gallery from "./gallery"
+import AboutInvest from "./aboutInvest"
+import Servicepage from "./servicepage"
+import TeamPage from "./teampage"
+import ContactUsPage from "./contactusfirst"
+import TreeNurseryProducts from "./treeNursery"
+import OrganicCompostProducts from "./composit"
+import TechnicalSupportConsultancy from "./technical"
 
 
 
@@ -35,8 +42,39 @@ function App() {
     <Navbar />
     <AboutHemmaInvestment />
     <AboutContent />
-
+    <AboutInvest />
+      <Footer />
     </>} />
+    <Route path="/services" element={<>
+      <Navbar />
+    <Servicepage />
+    <Footer />
+    </>} />
+    <Route path="/team" element={<>
+    <Navbar />
+    <TeamPage />
+    <Footer />
+    </>} />
+    <Route path="/contact" element={<>
+    <Navbar />
+    <ContactUs />
+    <Footer />
+    </>} />
+    <Route path="/nurseryTree" element={<>
+    <Navbar />
+    <TreeNurseryProducts />
+    <Footer />
+    </>}/>
+    <Route path="/organic" element={<>
+      <Navbar />
+    <OrganicCompostProducts />
+    <Footer />
+      </>}/>
+      <Route path="/technicalAdvice" element={<>
+      <Navbar />
+      <TechnicalSupportConsultancy />
+      <Footer />
+        </>}/>
    </Routes>
    </BrowserRouter>
   )

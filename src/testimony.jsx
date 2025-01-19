@@ -1,6 +1,12 @@
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Testimonials = () => {
+  React.useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   const testimonials = [
     {
       name: "Jean-Marie Nshimiyimana",
@@ -51,6 +57,7 @@ const Testimonials = () => {
           <div
             key={index}
             className="p-6 rounded-lg shadow-md flex items-start hover:bg-customTeal hover:text-white transition-colors duration-300"
+            data-aos="fade-up"
           >
             <img
               src={testimonial.image}
@@ -58,11 +65,11 @@ const Testimonials = () => {
               className="w-16 h-16 rounded-full mr-4 object-cover"
             />
             <div>
-              <p className="text-gray-700 hover:text-inherit italic mb-4">“ {testimonial.text} ”</p>
+              <p className="italic mb-4">“ {testimonial.text} ”</p>
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 hover:text-inherit">{testimonial.name}</h3>
-                  <p className="text-sm text-gray-500 hover:text-inherit">{testimonial.title}</p>
+                  <h3 className="text-lg font-bold">{testimonial.name}</h3>
+                  <p className="text-sm">{testimonial.title}</p>
                 </div>
                 <div className="mt-2 text-yellow-500 flex">
                   {"★".repeat(testimonial.rating)}
