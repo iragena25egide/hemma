@@ -33,6 +33,7 @@ function App() {
    
     <Route path="/" element={<>
       <Helmet>
+      <link rel="icon" href="../assets/images/logo.png" />
         <title>HEMMA INVESTMENT COMPANY Ltd</title>
       </Helmet>
 
@@ -49,6 +50,7 @@ function App() {
     <Route path="/about-Us" element={<>
 
       <Helmet>
+      <link rel="icon" href="../assets/images/logo.png" />
         <title>ABOUT US || HEMMA INVESTMENT COMPANY Ltd</title>
       </Helmet>
     <Navbar />
@@ -60,6 +62,7 @@ function App() {
     <Route path="/services" element={<>
 
       <Helmet>
+      <link rel="icon" href="../assets/images/logo.png" />
         <title>SERVICES || HEMMA INVESTMENT COMPANY Ltd</title>
       </Helmet>
       <Navbar />
@@ -68,6 +71,7 @@ function App() {
     </>} />
     <Route path="/team" element={<>
       <Helmet>
+      <link rel="icon" href="../assets/images/logo.png" />
         <title>TEAM || HEMMA INVESTMENT COMPANY Ltd</title>
       </Helmet>
     <Navbar />
@@ -77,6 +81,7 @@ function App() {
     <Route path="/contact" element={<>
 
       <Helmet>
+      <link rel="icon" href="../assets/images/logo.png" />
         <title>CONTACT || HEMMA INVESTMENT COMPANY Ltd</title>
       </Helmet>
     <Navbar />
@@ -86,6 +91,7 @@ function App() {
     <Route path="/nurseryTree" element={<>
 
       <Helmet>
+      <link rel="icon" href="../assets/images/logo.png" />
         <title>NURSERY TREE || HEMMA</title>
       </Helmet>
     <Navbar />
@@ -95,6 +101,7 @@ function App() {
     <Route path="/organic" element={<>
 
       <Helmet>
+      <link rel="icon" href="../assets/images/logo.png" />
         <title>ORGANIC COMPOSIT || HEMMA</title>
       </Helmet>
       <Navbar />
@@ -104,6 +111,7 @@ function App() {
       <Route path="/technicalAdvice" element={<>
 
         <Helmet>
+        <link rel="icon" href="../assets/images/logo.png" />
         <title>TECHNICAL SUPPORT || HEMMA</title>
       </Helmet>
       <Navbar />
