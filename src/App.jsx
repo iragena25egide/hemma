@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes} from "react-router-dom"
 import HeroPage from "./heroPage"
 import AboutSection from "./expertise"
 import WhyChooseUs from "./chooseUs"
@@ -18,6 +18,7 @@ import ContactUsPage from "./contactusfirst"
 import TreeNurseryProducts from "./treeNursery"
 import OrganicCompostProducts from "./composit"
 import TechnicalSupportConsultancy from "./technical"
+import ScrollToTop from "./scroll"
 
 
 
@@ -27,6 +28,8 @@ function App() {
   return (
    <BrowserRouter>
    <Routes>
+
+   
     <Route path="/" element={<>
     <HeroPage />
     <AboutSection />

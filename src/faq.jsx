@@ -62,7 +62,6 @@ const FAQ = () => {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            data-aos="fade-down"
             className={`rounded-lg overflow-hidden shadow-md transition-colors duration-300 ${
               activeIndex === index ? "bg-customTeal" : "bg-white"
             }`}

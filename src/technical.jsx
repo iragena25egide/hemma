@@ -1,20 +1,35 @@
 import React from 'react';
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
 
 const TechnicalSupportConsultancy = () => {
+  React.useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-16 px-8">
-      <div className="bg-white rounded-lg shadow-lg max-w-7xl w-full overflow-hidden flex mx-auto">
+      <div 
+        className="bg-white rounded-lg shadow-lg max-w-7xl w-full overflow-hidden flex flex-col md:flex-row mx-auto" 
+        data-aos="fade-down"
+      >
         {/* Left Image Section */}
-        <div className="w-full md:w-1/2 px-4">
+        <div className="w-full md:w-1/2">
           <img
             src="../assets/images/tx.jpg"
             alt="Technical Support"
-            className="w-full h-[900px] object-cover object-center rounded-l-lg"  // Adjusted height and added object-center for better focus
+            className="w-full h-64 md:h-[900px] object-cover object-center rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+          
           />
         </div>
 
         {/* Right Text Section */}
-        <div className="w-full md:w-1/2 px-6 py-8 flex flex-col justify-between">
+        <div 
+          className="w-full md:w-1/2 px-6 py-8 flex flex-col justify-between"
+        >
           {/* Header and Subheader */}
           <div>
             <h2 className="text-3xl font-bold text-customTeal mb-4">Technical Support and Consultancy</h2>

@@ -1,20 +1,36 @@
 import React from 'react';
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
 
 const TreeNurseryProducts = () => {
+  React.useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-12 px-6">
-      <div className="bg-white rounded-lg shadow-lg max-w-6xl w-full overflow-hidden flex">
-        {/* Left Image Section */}
-        <div className="w-full md:w-1/2 px-4">
+      <div 
+        className="bg-white rounded-lg shadow-lg max-w-6xl w-full overflow-hidden flex flex-col md:flex-row" 
+        data-aos="fade-down"
+      >
+      
+        <div className="w-full md:w-1/2">
           <img
             src="../assets/images/nurs.jpg"
             alt="Tree Nursery"
-            className="w-full h-[830px] object-cover rounded-l-lg"  // Increased height of the image
+            className="w-full h-64 md:h-[830px] object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+           
           />
         </div>
 
         {/* Right Text Section */}
-        <div className="w-full md:w-1/2 px-6 py-8 flex flex-col justify-between">
+        <div 
+          className="w-full md:w-1/2 px-6 py-8 flex flex-col justify-between"
+         
+        >
           {/* Header and Subheader */}
           <div>
             <h2 className="text-3xl font-bold text-customTeal mb-4">Tree Nursery Products</h2>

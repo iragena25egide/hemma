@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
 
 const AboutContent = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000,once:true }); 
+  }, []);
+
   return (
     <div className="bg-gradient-to-b from-green-100 to-white p-8">
       <div className="container mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-8 text-center lg:text-left">
-          <h2 className="text-3xl font-bold text-green-600 mb-4">
+          <h2 className="text-3xl font-bold text-green-600 mb-4" data-aos="fade-down">
             Who are <span className="text-teal-500">we?</span>
           </h2>
           <div className="flex flex-col lg:flex-row items-center lg:items-start">
-            <div className="lg:w-2/3">
+            <div className="lg:w-2/3" data-aos="fade-down">
               <p className="text-gray-700 mb-6 leading-relaxed">
                 <span className="font-bold text-green-600">HEMMA</span> Investment is a Rwanda-based company committed to the restoration of degraded lands, sustainable agriculture, and community empowerment. Established with a vision to address the growing challenges of deforestation, soil erosion, and land degradation, we aim to create sustainable solutions that benefit both the environment and local communities. We believe that land is not only a resource but also a legacy to be nurtured and preserved for future generations. By combining innovative techniques with a deep respect for traditional practices, HEMMA Investment is helping transform Rwanda's landscapes into thriving ecosystems.
               </p>
             </div>
-            <div className="lg:w-1/3 lg:pl-8">
+            <div className="lg:w-1/3 lg:pl-8" data-aos="fade-down">
               <img
                 src="../assets/images/logo.png"
                 alt="HEMMA Logo"
@@ -25,7 +31,7 @@ const AboutContent = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center" data-aos="zoom-in">
             <div className="text-green-600 text-3xl mb-2">
               <i className="fas fa-bullseye"></i>
             </div>
@@ -34,7 +40,7 @@ const AboutContent = () => {
               To create a sustainable future where restored lands, thriving ecosystems, and empowered communities coexist in harmony, contributing to environmental and economic prosperity.
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center" data-aos="zoom-in">
             <div className="text-teal-500 text-3xl mb-2">
               <i className="fas fa-leaf"></i>
             </div>

@@ -46,7 +46,7 @@ const LandingPage = () => {
         {/* Desktop Menu */}
         <nav className={`md:flex space-x-6 text-white ${showMobileMenu ? 'block' : 'hidden'}`}>
           <a href="#" className="font-medium hover:text-gray-300">
-            Home
+            HOME
           </a>
           <Link to={"/about-Us"} className="font-medium hover:text-gray-300">
             ABOUT US
@@ -62,12 +62,12 @@ const LandingPage = () => {
               More <FaAngleDown className="ml-1" />
             </button>
             <div className="absolute hidden group-hover:block bg-white text-black mt-2 rounded-lg shadow-lg w-36">
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                Option 1
-              </a>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                Option 2
-              </a>
+              <Link to={'/'} className="block px-4 py-2 hover:bg-gray-100">
+                HEMMA INVESTMENT
+              </Link>
+              <Link to={'/services'} className="block px-4 py-2 hover:bg-gray-100">
+                SERVICES
+              </Link>
             </div>
           </div>
         </nav>
@@ -91,7 +91,7 @@ const LandingPage = () => {
           </button>
           <nav className="flex flex-col items-center space-y-4 text-white text-xl">
             <a href="#" className="font-medium hover:text-gray-300">
-              Home
+              HOME
             </a>
             <Link to={"/about-Us"} className="font-medium hover:text-gray-300">
               ABOUT US
@@ -107,12 +107,12 @@ const LandingPage = () => {
                 More <FaAngleDown className="ml-1" />
               </button>
               <div className="absolute hidden group-hover:block bg-white text-black mt-2 rounded-lg shadow-lg w-36">
-                <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                  Option 1
-                </a>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                  Option 2
-                </a>
+              <Link to={'/'} className="block px-4 py-2 hover:bg-gray-100">
+                HEMMA INVESTMENT
+              </Link>
+              <Link to={'/services'} className="block px-4 py-2 hover:bg-gray-100">
+                SERVICES
+              </Link>
               </div>
             </div>
           </nav>
@@ -187,7 +187,7 @@ const LandingPage = () => {
 
         {showChat && (
   <div
-    className="absolute bottom-16 z-[1050] right-0 bg-white shadow-lg rounded-lg w-full sm:w-[500px]"
+    className="fixed bottom-16 right-5 bg-white shadow-lg rounded-lg w-full sm:w-[500px]"
     style={{ zIndex: 1050 }}
   >
     <div className="flex items-center justify-between bg-customTeal p-4 rounded-t-lg">
@@ -237,6 +237,7 @@ const LandingPage = () => {
     </div>
   </div>
 )}
+
 
       </div>
     </div>
