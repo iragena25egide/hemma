@@ -18,7 +18,8 @@ import ContactUsPage from "./contactusfirst"
 import TreeNurseryProducts from "./treeNursery"
 import OrganicCompostProducts from "./composit"
 import TechnicalSupportConsultancy from "./technical"
-import ScrollToTop from "./scroll"
+import { Helmet } from "react-helmet"
+
 
 
 
@@ -31,6 +32,10 @@ function App() {
 
    
     <Route path="/" element={<>
+      <Helmet>
+        <title>HEMMA INVESTMENT COMPANY Ltd</title>
+      </Helmet>
+
     <HeroPage />
     <AboutSection />
     <WhyChooseUs />
@@ -42,6 +47,10 @@ function App() {
     <Footer />
     </>} />
     <Route path="/about-Us" element={<>
+
+      <Helmet>
+        <title>ABOUT US || HEMMA INVESTMENT COMPANY Ltd</title>
+      </Helmet>
     <Navbar />
     <AboutHemmaInvestment />
     <AboutContent />
@@ -49,31 +58,54 @@ function App() {
       <Footer />
     </>} />
     <Route path="/services" element={<>
+
+      <Helmet>
+        <title>SERVICES || HEMMA INVESTMENT COMPANY Ltd</title>
+      </Helmet>
       <Navbar />
     <Servicepage />
     <Footer />
     </>} />
     <Route path="/team" element={<>
+      <Helmet>
+        <title>TEAM || HEMMA INVESTMENT COMPANY Ltd</title>
+      </Helmet>
     <Navbar />
     <TeamPage />
     <Footer />
     </>} />
     <Route path="/contact" element={<>
+
+      <Helmet>
+        <title>CONTACT || HEMMA INVESTMENT COMPANY Ltd</title>
+      </Helmet>
     <Navbar />
     <ContactUs />
     <Footer />
     </>} />
     <Route path="/nurseryTree" element={<>
+
+      <Helmet>
+        <title>NURSERY TREE || HEMMA</title>
+      </Helmet>
     <Navbar />
     <TreeNurseryProducts />
     <Footer />
     </>}/>
     <Route path="/organic" element={<>
+
+      <Helmet>
+        <title>ORGANIC COMPOSIT || HEMMA</title>
+      </Helmet>
       <Navbar />
     <OrganicCompostProducts />
     <Footer />
       </>}/>
       <Route path="/technicalAdvice" element={<>
+
+        <Helmet>
+        <title>TECHNICAL SUPPORT || HEMMA</title>
+      </Helmet>
       <Navbar />
       <TechnicalSupportConsultancy />
       <Footer />
