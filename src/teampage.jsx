@@ -58,53 +58,71 @@ const TeamPage = () => {
 
       {/* Team Categories Section */}
       <div className="py-16 max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
-          <span className='text-customTeal'>Team </span>Categories
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-  {[
-    {
-      title: (
-        <>
-          <span className="text-customTeal">Dedicated</span> Professionals
-        </>
-      ),
-      description:
-        'A team of highly trained specialists in customer service, sales, technical support, and data analysis.',
-    },
-    {
-      title: (
-        <>
-          <span className="text-customTeal">Innovative</span> Thinkers
-        </>
-      ),
-      description:
-        'Problem-solvers who leverage AI-powered tools, a cloud-based network, and analytics to deliver exceptional results.',
-    },
-    {
-      title: (
-        <>
-          <span className="text-customTeal">Experienced</span> Leaders
-        </>
-      ),
-      description:
-        'We foster a culture of teamwork and growth, ensuring our employees have the tools and support to excel.',
-    },
-  ].map((category, index) => (
-    <div
-      key={index}
-      className="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition-transform hover:scale-105 cursor-pointer"
-      data-aos="fade-up"
-    >
-      <h3 className="text-2xl font-bold mb-4">
-        {category.title}
-      </h3>
-      <p className="text-gray-700">{category.description}</p>
-    </div>
-  ))}
+  <h2 className="text-3xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
+    <span className='text-customTeal'>Team </span>Categories
+  </h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {[
+      {
+        title: (
+          <>
+            <span className="text-customTeal">Dedicated</span> Professionals
+          </>
+        ),
+        description: (
+          <>
+          <span className="text-gray-800">
+          'A team of highly trained specialists in customer service, sales, technical support, and data analysis.',
+
+          </span>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <span className="text-customTeal">Innovative</span> Thinkers
+          </>
+        ),
+        description: (
+          <>
+          
+          <span className="text-gray-800">
+          'Problem-solvers who leverage AI-powered tools, a cloud-based network, and analytics to deliver exceptional results.',
+
+          </span></>
+        )
+      },
+      {
+        title: (
+          <>
+            <span className="text-customTeal">Experienced</span> Leaders
+          </>
+        ),
+        description: (
+          <>
+          <span className='text-gray-800'>
+          'We foster a culture of teamwork and growth, ensuring our employees have the tools and support to excel.',
+
+          </span>
+          </>
+        )
+      },
+    ].map((category, index) => (
+      <div
+        key={index}
+        className="bg-gradient-to-b from-green-200 to-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition-transform hover:scale-105 cursor-pointer"
+        data-aos="fade-up"
+      >
+        <h3 className="text-2xl font-bold mb-4">
+          {category.title}
+        </h3>
+        <p className="text-gray-200">{category.description}</p>
+      </div>
+    ))}
+  </div>
 </div>
 
-      </div>
     </div>
   );
 };

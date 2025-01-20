@@ -136,7 +136,7 @@ const Navbar = () => {
             <button className="font-medium flex items-center hover:text-gray-300">
               More <FaAngleDown className="ml-1" />
             </button>
-            <div className="absolute hidden group-hover:block bg-white text-black mt-[8px] rounded-lg shadow-lg w-36"> {/* Adjusted with mt-[8px] */}
+            <div className="absolute hidden group-hover:block bg-white text-black mt-[0px] rounded-lg shadow-lg w-36"> {/* Adjusted with mt-[8px] */}
               <div className="absolute w-56 rounded-md shadow-lg bg-customTeal text-white border border-white">
                 <div className="py-1">
                  

@@ -37,7 +37,7 @@ const AboutInvest = () => {
 
       {/* Right section with values */}
       <div className="md:w-1/2 w-full bg-customGreen p-6 md:p-8 flex flex-col justify-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-customPurple">Values</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-customPurple"><span className='text-customPurple>'>Values</span></h2>
 
         {/* Innovation section */}
         <div className="mt-8 flex flex-col items-center text-black">

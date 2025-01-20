@@ -43,56 +43,56 @@ const LandingPage = () => {
 
         {/* Desktop Menu */}
         <nav className={`md:flex space-x-6 text-white ${showMobileMenu ? 'block' : 'hidden'}`}>
-          <a href="#" className="font-medium hover:text-gray-300">
-            Home
-          </a>
-          <Link to={"/about-Us"} className="font-medium hover:text-gray-300">
-            About us
-          </Link>
-          <Link to={"/services"} className="font-medium hover:text-gray-300">
-            Services
-          </Link>
-          <Link to={"/team"} className="font-medium hover:text-gray-300">
-            Team
-          </Link>
-          <div className="relative group">
-            {/* Button to toggle the dropdown */}
-            <button className="font-medium flex items-center hover:text-gray-300">
-              More <FaAngleDown className="ml-1" />
-            </button>
+  <a href="#" className="group font-medium hover:text-gray-300">
+    <span className="group-hover:text-gray-300">Home</span>
+  </a>
+  <Link to={"/about-Us"} className="group font-medium hover:text-gray-300">
+    <span className="group-hover:text-gray-300">About us</span>
+  </Link>
+  <Link to={"/services"} className="group font-medium hover:text-gray-300">
+    <span className="group-hover:text-gray-300">Services</span>
+  </Link>
+  <Link to={"/team"} className="group font-medium hover:text-gray-300">
+    <span className="group-hover:text-gray-300">Team</span>
+  </Link>
+  <div className="relative group">
+    {/* Button to toggle the dropdown */}
+    <button className="font-medium flex items-center hover:text-gray-300">
+      More <FaAngleDown className="ml-1" />
+    </button>
 
-            {/* Dropdown menu */}
-            <div className="absolute bg-customTeal text-white rounded-lg shadow-lg w-48 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 border border-white">
-              <div className="py-1">
-                <Link
-                  to={'/location'}
-                  className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-                >
-                  Location
-                </Link>
-               
-                <Link 
-                  to="/possible-solutions"  
-                  className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-                >
-                  Possible Solutions
-                </Link>
-                <Link
-                  to={'/benefit'}
-                  className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-                >
-                  Project Beneficiaries
-                </Link>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
-                >
-                  Get a quote
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
+    {/* Dropdown menu */}
+    <div className="absolute bg-customTeal text-white rounded-lg shadow-lg w-48 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 border border-white">
+      <div className="py-1">
+        <Link
+          to={'/location'}
+          className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+        >
+          Location
+        </Link>
+        <Link
+          to="/possible-solutions"
+          className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+        >
+          Possible Solutions
+        </Link>
+        <Link
+          to={'/benefit'}
+          className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+        >
+          Project Beneficiaries
+        </Link>
+        <a
+          href="#"
+          className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
+        >
+          Get a quote
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
 
         <Link
           to={"/contact"}
@@ -135,7 +135,7 @@ const LandingPage = () => {
               <button className="font-medium flex items-center hover:text-gray-300">
                 More <FaAngleDown className="ml-1" />
               </button>
-              <div className="absolute hidden group-hover:block bg-white text-black mt-2 rounded-lg shadow-lg w-36">
+              <div className="absolute hidden group-hover:block bg-white text-black mt-0 rounded-lg shadow-lg w-36">
                 <div className="absolute w-56 rounded-md shadow-lg bg-customTeal text-white border border-white">
                   <div className="py-1">
                     <Link
