@@ -16,7 +16,7 @@ const AboutHemma = () => {
       <div className="relative text-center" data-aos="fade-down">
         <h1 className="text-white text-4xl font-bold mb-4">ABOUT HEMMA INVESTMENT</h1>
         <div className="flex justify-center">
-          {/* <div className="border-b-8 border-white w-1/2"></div> */}
+          <div className="border-b-8 border-white w-full"></div>
         </div>
         <div className="flex justify-center mt-4" data-aos="zoom-in">
           <div className="relative border-l-8 border-white h-80" data-aos="fade-down">

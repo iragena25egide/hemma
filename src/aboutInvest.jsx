@@ -8,46 +8,44 @@ const AboutInvest = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-green-100 to-white py-12">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-       
-        <div className="mb-12 text-center" data-aos="fade-down">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">About Hemma Investments</h1>
-          <p className="text-gray-700 max-w-3xl mx-auto">
-            Hemma Investments is dedicated to reversing land degradation and promoting sustainable agricultural practices. By integrating innovative solutions with community engagement, we strive to create resilient landscapes and sustainable livelihoods.
-          </p>
-        </div>
+    <div className="flex flex-col md:flex-row bg-green-100 text-white">
+  <div
+  className="md:w-1/2 p-8 bg-cover bg-center relative text-white"
+  style={{ backgroundImage: "url('../assets/images/main.jpg')" }}
+>
+  <div className="absolute inset-0 bg-customTeal bg-opacity-40"></div>
+  <div className="relative z-10">
+    <h2 className="text-4xl font-bold">Our</h2>
+    <h3 className="text-3xl font-semibold mt-4">Sustainability</h3>
+    <p className="mt-4">
+      Creating solutions that ensure long-term environmental, social, and economic balance.
+    </p>
+    <h3 className="text-3xl font-semibold mt-6">Environmental Stewardship</h3>
+    <p className="mt-4">
+      Actively involving local communities in decision-making and implementation to promote ownership and lasting results.
+    </p>
+  </div>
+</div>
 
-        <div className="mb-12" data-aos="fade-down">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Team</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {[{ name: 'John Doe', role: 'Chief Executive Officer' }, { name: 'Jane Smith', role: 'Head of Operations' }, { name: 'Emily Johnson', role: 'Community Engagement Manager' }].map((member, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow text-center" data-aos="flip-down">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-gray-700">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        <div className="mb-12 mt-8 flex flex-col md:flex-row items-center" data-aos="fade-down">
-          <div className="md:w-1/2">
-            <img
-              src="../assets/images/nursery.jpg"
-              alt="Restoration Project"
-              className="w-full rounded-lg shadow-lg h-auto md:h-80 object-cover"
-              data-aos="zoom-in"
-            />
-          </div>
-          <div className="md:w-1/2 md:pl-12 mt-6 md:mt-0 text-center md:text-left" data-aos="fade-down">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Restoration Projects</h2>
-            <p className="text-gray-700 leading-relaxed">
-              Our restoration projects focus on reversing land degradation through innovative practices like tree planting, soil conservation, and community involvement, aiming to enhance both ecological and economic value.
-            </p>
-          </div>
-        </div>
+    <div className="md:w-1/2 bg-customGreen p-8">
+      <h2 className="text-4xl font-bold text-center">Values</h2>
+      <div className="mt-8 flex flex-col items-center">
+        <img src="../assets/images/values.jpg" alt="Innovation" className="w-24 h-24 rounded-full"/>
+        <h3 className="text-3xl font-semibold mt-4">Innovation</h3>
+        <p className="mt-4 text-center">
+          Leveraging cutting-edge practices to maximize our impact.
+        </p>
+      </div>
+      <div className="mt-8 flex flex-col items-center">
+        <img src="../assets/images/comm.jpg" alt="Community Empowerment" className="w-24 h-24"/>
+        <h3 className="text-3xl font-semibold mt-4">Community Empowerment</h3>
+        <p className="mt-4 text-center">
+          Working tirelessly to protect and rejuvenate natural ecosystems.
+        </p>
       </div>
     </div>
+  </div>
   );
 };
 

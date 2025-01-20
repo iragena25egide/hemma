@@ -31,13 +31,42 @@ const Navbar = () => {
             <button className="font-medium flex items-center hover:text-gray-300">
               More <span className="ml-1"><FaAngleDown /></span>
             </button>
-            <div className="absolute hidden group-hover:block bg-white text-black mt-2 rounded-lg shadow-lg w-36">
-              <Link to={'/'} className="block px-4 py-2 hover:bg-gray-100">
-                             HEMMA INVESTMENT
-                           </Link>
-                           <Link to={'/services'} className="block px-4 py-2 hover:bg-gray-100">
-                             SERVICES
-                           </Link>
+    <div className="absolute hidden group-hover:block mt-1 bg-customTeal text-white rounded-lg shadow-lg w-36">
+  <div className="absolute w-56 rounded-md shadow-lg bg-customTeal text-white border border-white">
+    <div className="py-1">
+      <a
+        href="#"
+        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+      >
+        More
+      </a>
+      <a
+        href="#"
+        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+      >
+        Location
+      </a>
+      <a
+        href="#"
+        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+      >
+        Possible Solutions
+      </a>
+      <a
+        href="#"
+        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+      >
+        Project Beneficiaries
+      </a>
+      <a
+        href="#"
+        className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
+      >
+        Get a quote
+      </a>
+    </div>
+  </div>
+
             </div>
           </div>
         </nav>

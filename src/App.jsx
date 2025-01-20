@@ -57,6 +57,7 @@ function App() {
     <AboutHemmaInvestment />
     <AboutContent />
     <AboutInvest />
+    <WhyChooseUs />
       <Footer />
     </>} />
     <Route path="/services" element={<>

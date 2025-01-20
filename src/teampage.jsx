@@ -41,7 +41,7 @@ const TeamPage = () => {
         style={{ backgroundImage: `url('../assets/images/team1.jpg')` }}
       >
        
-        <div className="absolute inset-0 bg-gray-900 bg-opacity-80 flex flex-col justify-center items-center text-center px-6">
+        <div className="absolute inset-0 bg-customTeal bg-opacity-50 flex flex-col justify-center items-center text-center px-6">
          
           <h1 className="text-5xl font-bold text-white mb-6 leading-tight" data-aos="fade-down">
             MEET OUR TEAM
@@ -51,13 +51,7 @@ const TeamPage = () => {
             Dedicated professionals, innovative thinkers, and experienced leaders committed to delivering excellence.
           </p>
          
-          <a
-            href="#team"
-            className="bg-white text-teal-500 font-medium px-6 py-3 rounded-full shadow-lg hover:bg-gray-200 transition"
-            data-aos="fade-up"
-          >
-            Learn More
-          </a>
+         
         </div>
       </div>
 

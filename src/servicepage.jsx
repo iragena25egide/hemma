@@ -21,7 +21,7 @@ const Servicepage = () => {
           alt="Hero Background"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col justify-center items-center text-center px-6">
+        <div className="absolute inset-0 bg-customTeal bg-opacity-50 flex flex-col justify-center items-center text-center px-6">
           <h1 className="text-5xl font-bold text-white mb-4" data-aos="fade-down">
             HEMMA INVESTMENT SERVICES
           </h1>
