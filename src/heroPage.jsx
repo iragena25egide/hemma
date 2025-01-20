@@ -6,15 +6,14 @@ import { IoMenu } from "react-icons/io5";
 import AOS from 'aos'; 
 import 'aos/dist/aos.css';
 
-
 const LandingPage = () => {
+  React.useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      once: true, 
+    });
+  }, []);
 
-    React.useEffect(() => {
-        AOS.init({
-          duration: 1000, 
-          once: true, 
-        });
-      }, []);
   const [showChat, setShowChat] = useState(false);
   const [message, setMessage] = useState("");
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -30,12 +29,11 @@ const LandingPage = () => {
       className="relative w-full min-h-screen bg-cover bg-center"
       style={{ backgroundImage: "url('../assets/images/hero.jpg')" }}
     >
-      <header className="absolute top-0 left-0 w-full p-4 sm:p-6 flex justify-between items-center bg-opacity-50 border-b border-gray-300" >
+      <header className="absolute top-0 left-0 w-full p-4 sm:p-6 flex justify-between items-center bg-opacity-50 border-b border-gray-300">
         <div className="flex w-[20%] sm:w-[10%] lg:w-[8%]">
-          <img src="../assets/images/logo.png" alt="Logo" className="w-full" />
+          <img src="../assets/images/real-white-logo.png" alt="Logo" className="w-full" />
         </div>
 
-       
         <button
           onClick={() => setShowMobileMenu(!showMobileMenu)}
           className="md:hidden text-white"
@@ -46,129 +44,126 @@ const LandingPage = () => {
         {/* Desktop Menu */}
         <nav className={`md:flex space-x-6 text-white ${showMobileMenu ? 'block' : 'hidden'}`}>
           <a href="#" className="font-medium hover:text-gray-300">
-            HOME
+            Home
           </a>
           <Link to={"/about-Us"} className="font-medium hover:text-gray-300">
-            ABOUT US
+            About us
           </Link>
           <Link to={"/services"} className="font-medium hover:text-gray-300">
-            SERVICES
+            Services
           </Link>
           <Link to={"/team"} className="font-medium hover:text-gray-300">
-            TEAM
+            Team
           </Link>
           <div className="relative group">
+            {/* Button to toggle the dropdown */}
             <button className="font-medium flex items-center hover:text-gray-300">
               More <FaAngleDown className="ml-1" />
             </button>
-            <div className="absolute hidden group-hover:block mt-1 bg-customTeal text-white rounded-lg shadow-lg w-36 z-100">
-  <div className="absolute w-56 rounded-md shadow-lg bg-customTeal text-white border border-white">
-    <div className="py-1">
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        More
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        Location
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        Possible Solutions
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        Project Beneficiaries
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
-      >
-        Get a quote
-      </a>
-    </div>
-  </div>
+
+            {/* Dropdown menu */}
+            <div className="absolute bg-customTeal text-white rounded-lg shadow-lg w-48 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 border border-white">
+              <div className="py-1">
+                <Link
+                  to={'/location'}
+                  className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+                >
+                  Location
+                </Link>
+               
+                <Link 
+                  to="/possible-solutions"  
+                  className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+                >
+                  Possible Solutions
+                </Link>
+                <Link
+                  to={'/benefit'}
+                  className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+                >
+                  Project Beneficiaries
+                </Link>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
+                >
+                  Get a quote
+                </a>
+              </div>
             </div>
           </div>
         </nav>
 
         <Link
-  to={"/contact"}
-  className="bg-white text-customTeal font-medium px-5 py-2 rounded-full shadow-lg hover:bg-gray-200 transition hidden sm:block"
->
-  Contact Us
-</Link>
-
+          to={"/contact"}
+          className="bg-white text-customTeal font-medium px-5 py-2 rounded-full shadow-lg hover:bg-gray-200 transition hidden sm:block"
+        >
+          Contact Us
+        </Link>
       </header>
 
       {showMobileMenu && (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-90 z-50 flex flex-col items-center py-6">
+        <div 
+          className="fixed top-0 left-0 w-full h-full bg-customTeal z-50 flex flex-col items-center py-6" 
+          style={{ backgroundColor: 'customTeal' }} // Removing `bg-opacity-90` for an opaque background
+        >
+          {/* Close button for the mobile menu */}
           <button
             onClick={() => setShowMobileMenu(false)}
             className="absolute top-4 right-4 text-white text-3xl"
           >
             ✕
           </button>
+        
+          {/* Navigation links */}
           <nav className="flex flex-col items-center space-y-4 text-white text-xl">
             <a href="#" className="font-medium hover:text-gray-300">
-              HOME
+              Home
             </a>
             <Link to={"/about-Us"} className="font-medium hover:text-gray-300">
-              ABOUT US
+              About Us
             </Link>
             <Link to={"/services"} className="font-medium hover:text-gray-300">
-              SERVICES
+              Services
             </Link>
             <Link to={"/team"} className="font-medium hover:text-gray-300">
-              TEAM
+              Team
             </Link>
+            
+            {/* Dropdown for "More" */}
             <div className="relative group">
               <button className="font-medium flex items-center hover:text-gray-300">
                 More <FaAngleDown className="ml-1" />
               </button>
               <div className="absolute hidden group-hover:block bg-white text-black mt-2 rounded-lg shadow-lg w-36">
-              <div className="absolute w-56 rounded-md shadow-lg bg-customTeal text-white border border-white">
-    <div className="py-1">
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        More
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        Location
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        Possible Solutions
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        Project Beneficiaries
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
-      >
-        Get a quote
-      </a>
-    </div>
-  </div>
+                <div className="absolute w-56 rounded-md shadow-lg bg-customTeal text-white border border-white">
+                  <div className="py-1">
+                    <Link
+                      href={'/location'}
+                      className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+                    >
+                      Location
+                    </Link>
+                    <Link
+                      to={"/possible-solutions"}
+                      className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+                    >
+                      Possible Solutions
+                    </Link>
+                    <Link
+                      to={"/benefit"}
+                      className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
+                    >
+                      Project Beneficiaries
+                    </Link>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
+                    >
+                      Get a quote
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </nav>
@@ -188,12 +183,12 @@ const LandingPage = () => {
         </p>
 
         <div className="mt-6 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <a
-            href="#"
+          <Link
+            to={'/about-Us'}
             className="bg-customTeal text-white font-medium px-6 py-3 rounded-full shadow-lg hover:bg-customTeal transition"
           >
             About Us
-          </a>
+          </Link>
           <a
             href="#"
             className="bg-white text-customTeal font-medium px-6 py-3 rounded-full shadow-lg hover:bg-gray-200 transition"
@@ -201,9 +196,8 @@ const LandingPage = () => {
             Learn More
           </a>
         </div>
-      </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-lg p-3 flex justify-center items-center space-x-4 sm:space-x-10 w-11/12 sm:w-2/3 lg:w-2/4 max-w-4xl" >
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-lg p-3 flex justify-center items-center space-x-4 sm:space-x-10 w-11/12 sm:w-2/3 lg:w-2/4 max-w-4xl" >
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
             10<span className="text-customTeal">+</span>
@@ -226,75 +220,12 @@ const LandingPage = () => {
         </div>
         <div className="border-l border-gray-300 h-12"></div>
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
             8<span className="text-customTeal">+</span>
           </h2>
           <p className="text-gray-500">Local Team Members</p>
         </div>
-      </div>
-
-      <div className="fixed bottom-5 right-5 sm:block">
-        <button
-          onClick={() => setShowChat(!showChat)}
-          className="bg-customTeal text-white p-4 rounded-full shadow-lg hover:bg-customTeal transition sm:block"
-        >
-          <FaWhatsapp size={22} />
-        </button>
-
-        {showChat && (
-  <div
-    className="fixed bottom-16 right-5 bg-white shadow-lg rounded-lg w-full sm:w-[500px]"
-    style={{ zIndex: 1050 }}
-  >
-    <div className="flex items-center justify-between bg-customTeal p-4 rounded-t-lg">
-      <div className="flex items-center">
-        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-2">
-          <img
-            src="../assets/images/logo.png" 
-            alt="Hemma Investment Logo"
-            className="w-8 h-8 rounded-full"
-          />
-        </div>
-        <div className="text-white font-bold">Hemma Investment</div>
-      </div>
-      <button onClick={() => setShowChat(false)} className="text-white">
-        ✕
-      </button>
-    </div>
-    <div
-      className="p-4 rounded-b-lg"
-      style={{
-        backgroundImage: "url('../assets/images/whatsapp-bg.png')",
-        backgroundSize: "cover",
-      }}
-    >
-      <div className="bg-white p-4 rounded-lg shadow mb-4 w-3/4 ml-4">
-        <p className="text-gray-800 font-medium">
-          Hemma Investment Li...
-        </p>
-        <p className="text-gray-600">Hi there 👋</p>
-        <p className="text-gray-600">How can we help you?</p>
-      </div>
-      <div className="bg-white rounded-full flex items-center px-4 py-2 shadow-md">
-        <input
-          type="text"
-          className="w-full border-none focus:outline-none"
-          placeholder="Write a message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button
-          onClick={handleSendMessage}
-          className="bg-customTeal rounded-full p-2"
-        >
-          <IoSend className="text-white" />
-        </button>
-      </div>
-    </div>
-  </div>
-)}
-
-
+      </div>
       </div>
     </div>
   );

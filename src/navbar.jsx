@@ -1,120 +1,159 @@
-import React, { useState, useEffect } from 'react';
-import { FaWhatsapp, FaAngleDown, FaBars } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import AOS from 'aos'; 
-import 'aos/dist/aos.css';
+import React, { useState, useEffect, useRef } from "react";
+import { FaAngleDown, FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false); // State to manage dropdown visibility
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     AOS.init({
       duration: 100,
       once: true,
     });
+
+    // Add click event listener to close dropdown when clicking outside of it
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    // Attach the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup event listener when component unmounts
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
     <header className="w-full bg-customTeal p-8 sticky top-0 z-50">
+      {/* Navbar container */}
       <div className="container mx-auto flex justify-between items-center" data-aos="fade-down">
+        {/* Logo */}
         <div className="text-white text-2xl font-bold flex items-center">
-         <Link to={'/'}><img src="../assets/images/logo.png" width={60} alt="Hemma Investment Logo" className="mr-2" /></Link> 
-         <Link to={'/'}> <h4>HEMMA INVESTMENT</h4></Link>
+          <Link to={"/"}>
+            <img src="../assets/images/real-white-logo.png" width={70} alt="Hemma Investment Logo" className="mr-2" />
+          </Link>
+          <Link to={"/"}>
+            <h4>HEMMA INVESTMENT</h4>
+          </Link>
         </div>
 
+        {/* Desktop navigation */}
         <nav className="hidden md:flex space-x-6 text-white">
-          <Link to={'/'} className="font-medium hover:text-gray-300">HOME</Link>
-          <Link to={'/about-Us'} className="font-medium hover:text-gray-300">ABOUT US</Link>
-          <Link to={'/services'} className="font-medium hover:text-gray-300">SERVICES</Link>
-          <Link to={'/team'} className="font-medium hover:text-gray-300">TEAM</Link>
-          <div className="relative group">
-            <button className="font-medium flex items-center hover:text-gray-300">
-              More <span className="ml-1"><FaAngleDown /></span>
-            </button>
-    <div className="absolute hidden group-hover:block mt-1 bg-customTeal text-white rounded-lg shadow-lg w-36">
-  <div className="absolute w-56 rounded-md shadow-lg bg-customTeal text-white border border-white">
-    <div className="py-1">
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        More
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        Location
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        Possible Solutions
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
-      >
-        Project Beneficiaries
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
-      >
-        Get a quote
-      </a>
-    </div>
-  </div>
+          <Link to={"/"} className="font-medium hover:text-gray-300">Home</Link>
+          <Link to={"/about-Us"} className="font-medium hover:text-gray-300">About Us</Link>
+          <Link to={"/services"} className="font-medium hover:text-gray-300">Services</Link>
+          <Link to={"/team"} className="font-medium hover:text-gray-300">Team</Link>
 
-            </div>
+          {/* Dropdown for "More" menu */}
+          <div
+            className="relative"
+            onMouseEnter={() => setDropdownOpen(true)} // Show the dropdown menu when hovered
+            onMouseLeave={() => setDropdownOpen(false)} // Hide the dropdown menu when mouse leaves
+            ref={dropdownRef} // Attach ref to dropdown div
+          >
+            <button className="font-medium flex items-center hover:text-gray-300">
+              More <FaAngleDown className="ml-1" />
+            </button>
+            {/* Dropdown menu */}
+            {isDropdownOpen && (
+              <div className="absolute bg-white text-black mt-[0px] rounded-lg shadow-lg w-36"> {/* Adjusted with mt-[8px] */}
+                <div className="w-56 rounded-md shadow-lg bg-customTeal text-white border border-white">
+                  <div className="py-1">
+                   
+                    <Link to={'/location'} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
+                      Location
+                    </Link>
+                    <Link to={"/possible-solutions"} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
+                      Possible Solutions
+                    </Link>
+                    <Link to={'/benefit'} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
+                      Project Beneficiaries
+                    </Link>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed">
+                      Get a quote
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </nav>
 
-        
-        <Link to={"/contact"}
+        {/* Desktop "Contact Us" Button */}
+        <Link
+          to={"/contact"}
           className="bg-white text-customTeal font-medium px-5 py-2 rounded-full shadow-lg hover:bg-gray-200 transition hidden md:block"
         >
           Contact Us
         </Link>
 
-       
-        <button
-          className="md:hidden text-white"
-          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <FaBars size={24} />
-        </button>
+        {/* Mobile Menu Button */}
+        {!isMobileMenuOpen && (
+          <button
+            className="md:hidden text-white"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <FaBars size={24} />
+          </button>
+        )}
       </div>
 
-     
+      {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div 
-          className="md:hidden bg-customTeal text-white mt-4 space-y-4 py-4 px-6 relative" 
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-customTeal text-white z-50 flex flex-col items-center py-8 space-y-4"
           data-aos="fade-in"
         >
-          <button 
-            onClick={() => setMobileMenuOpen(false)} 
-            className="absolute top-2 right-4 text-white text-2xl"
-          >
+          {/* Close button */}
+          <button onClick={() => setMobileMenuOpen(false)} className="absolute top-4 right-6 text-white text-3xl">
             ✕
           </button>
-          <Link to={'/'} className="block font-medium hover:text-gray-300">HOME</Link>
-          <Link to={'/about-Us'} className="block font-medium hover:text-gray-300">ABOUT US</Link>
-          <Link to={'/services'} className="block font-medium hover:text-gray-300">SERVICES</Link>
-          <Link to={'/team'} className="block font-medium hover:text-gray-300">TEAM</Link>
 
-          <div className="relative">
-            <button className="font-medium flex items-center hover:text-gray-300 w-full">
-              More <span className="ml-1"><FaAngleDown /></span>
+          {/* Mobile navigation links */}
+          <Link to={"/"} className="block font-medium text-xl hover:text-gray-300" onClick={() => setMobileMenuOpen(false)}>
+            Home
+          </Link>
+          <Link to={"/about-Us"} className="block font-medium text-xl hover:text-gray-300" onClick={() => setMobileMenuOpen(false)}>
+            About Us
+          </Link>
+          <Link to={"/services"} className="block font-medium text-xl hover:text-gray-300" onClick={() => setMobileMenuOpen(false)}>
+            Services
+          </Link>
+          <Link to={"/team"} className="block font-medium text-xl hover:text-gray-300" onClick={() => setMobileMenuOpen(false)}>
+            Team
+          </Link>
+
+          {/* Dropdown for "More" menu in mobile */}
+          <div className="relative group">
+            <button className="font-medium flex items-center hover:text-gray-300">
+              More <FaAngleDown className="ml-1" />
             </button>
-            <div className="absolute hidden group-hover:block bg-white text-black mt-2 rounded-lg shadow-lg w-full">
-              <Link to={'/'} className="block px-4 py-2 hover:bg-gray-100">
-                             HEMMA INVESTMENT
-                           </Link>
-                           <Link to={'/services'} className="block px-4 py-2 hover:bg-gray-100">
-                             SERVICES
-                           </Link>
+            <div className="absolute hidden group-hover:block bg-white text-black mt-[8px] rounded-lg shadow-lg w-36"> {/* Adjusted with mt-[8px] */}
+              <div className="absolute w-56 rounded-md shadow-lg bg-customTeal text-white border border-white">
+                <div className="py-1">
+                 
+                  <Link to={'/location'} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
+                    Location
+                  </Link>
+                  <Link to={"/possible-solutions"} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
+                    Possible Solutions
+                  </Link>
+                  <Link to={"/benefit"} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
+                    Project Beneficiaries
+                  </Link>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed">
+                    Get a quote
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

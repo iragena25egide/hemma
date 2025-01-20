@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import { FaTree, FaLeaf, FaTools, FaChartLine, FaUserShield, FaHandsHelping } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import AOS from 'aos'; 
+import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Servicepage = () => {
@@ -14,7 +13,7 @@ const Servicepage = () => {
 
   return (
     <div className="bg-gray-100">
-   
+      {/* Hero Section */}
       <div className="relative w-full h-screen">
         <img
           src="../assets/images/serv.jpg"
@@ -32,71 +31,104 @@ const Servicepage = () => {
       </div>
 
       {/* Services Section */}
-      <div className="py-12 max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Tree Nursery Products */}
-        <div className="mb-12 flex flex-col md:flex-row items-center justify-between px-6" data-aos="fade-down">
-          <div className="md:w-1/2 flex flex-col justify-between h-full mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Tree Nursery Products</h2>
-            <p className="text-gray-700 mb-4">
-              We provide high-quality seedlings of various tree species, including indigenous and fast-growing trees, ideal for reforestation, afforestation, and agroforestry projects.
-            </p>
-            <ul className="list-disc pl-5 text-gray-700 mb-4">
-              <li>Native species adapted to local environmental conditions.</li>
-              <li>Varieties that support biodiversity and ecosystem restoration.</li>
-              <li>Seedlings grown using sustainable practices.</li>
-            </ul>
+      <div className="py-12 max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
+        {/* Row 1: Tree Nursery */}
+        <div
+          className="bg-gradient-to-b from-green-200 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all flex flex-col md:flex-row items-center"
+          data-aos="fade-up"
+        >
+          <div className="md:w-1/2">
+            <img
+              src="../assets/images/nurs.jpg"
+              alt="Tree Nursery"
+              className="rounded-lg shadow-md w-full h-64 object-cover mb-4 md:mb-0"
+            />
+          </div>
+          <div className="md:w-1/2 md:pl-6 flex flex-col text-center md:text-left">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                Tree Nursery <span className="text-customTeal">Products</span>
+              </h2>
+              <p className="text-gray-700 mb-4">
+                High-quality seedlings for reforestation, afforestation, and agroforestry projects.
+              </p>
+              <ul className="list-disc pl-5 text-gray-700 mb-4">
+                <li>Native species adapted to local environmental conditions.</li>
+                <li>Varieties that support biodiversity and ecosystem restoration.</li>
+                <li>Seedlings grown using sustainable practices.</li>
+              </ul>
+            </div>
             <Link
               to="/nurseryTree"
-              className="bg-customTeal text-white font-medium px-6 w-1/2 mx-auto text-center py-3 rounded-full shadow-lg hover:bg-gray-700 transition"
+              className="bg-customTeal text-white font-medium px-6 py-3 rounded-full shadow-lg transition mt-6 mx-auto"
             >
               Read More
             </Link>
           </div>
-          <div className="md:w-1/2 px-4">
-            <img src="../assets/images/nurs.jpg" alt="Tree Nursery" className="rounded-lg shadow-lg w-full h-auto md:h-[300px] object-cover" />
-          </div>
         </div>
 
-        {/* Organic Compost Products */}
-        <div className="mb-12 flex flex-col md:flex-row-reverse items-center justify-between px-6" data-aos="fade-down">
-          <div className="md:w-1/2 flex flex-col justify-between h-full mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Organic Compost Products</h2>
-            <p className="text-gray-700 mb-4">
-              Our nutrient-rich compost, made from locally sourced organic materials, is perfect for improving soil fertility and supporting plant growth.
-            </p>
-            <ul className="list-disc pl-5 text-gray-700 mb-4">
-              <li>Made from locally sourced organic waste.</li>
-              <li>Enriched with essential nutrients and beneficial microorganisms.</li>
-              <li>Produced using environmentally friendly methods.</li>
-            </ul>
+        {/* Row 2: Organic Compost */}
+        <div
+          className="bg-gradient-to-b from-green-200 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all flex flex-col md:flex-row-reverse items-center"
+          data-aos="fade-up"
+        >
+          <div className="md:w-1/2">
+            <img
+              src="../assets/images/comp.jpg"
+              alt="Organic Compost"
+              className="rounded-lg shadow-md w-full h-64 object-cover mb-4 md:mb-0"
+            />
+          </div>
+          <div className="md:w-1/2 md:pr-6 flex flex-col text-center md:text-left">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                Organic Compost <span className="text-customTeal">Products</span>
+              </h2>
+              <p className="text-gray-700 mb-4">
+                Nutrient-rich compost to improve soil fertility and support plant growth.
+              </p>
+              <ul className="list-disc pl-5 text-gray-700 mb-4">
+                <li>Made from locally sourced organic waste.</li>
+                <li>Enriched with essential nutrients and microorganisms.</li>
+                <li>Produced using environmentally friendly methods.</li>
+              </ul>
+            </div>
             <Link
               to="/organic"
-              className="bg-customTeal text-white font-medium px-6 py-3 w-1/2 mx-auto text-center rounded-full shadow-lg hover:bg-gray-700 transition"
+              className="bg-customTeal text-white font-medium px-6 py-3 rounded-full shadow-lg transition mt-6 mx-auto"
             >
               Read More
             </Link>
-          </div>
-          <div className="md:w-1/2 px-4">
-            <img src="../assets/images/comp.jpg" alt="Organic Compost" className="rounded-lg shadow-lg w-full h-auto md:h-[300px] object-cover" />
           </div>
         </div>
 
-        {/* Technical Support and Consultancy */}
-        <div className="mb-12 flex flex-col md:flex-row items-center justify-between px-6" data-aos="fade-down">
-          <div className="md:w-1/2 flex flex-col justify-between h-full mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Technical Support and Consultancy</h2>
-            <p className="text-gray-700 mb-4">
-              We offer expert advice and support on land restoration projects, providing technical guidance and project management to ensure successful outcomes.
-            </p>
+        {/* Row 3: Technical Support */}
+        <div
+          className="bg-gradient-to-b from-green-200 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all flex flex-col md:flex-row items-center"
+          data-aos="fade-up"
+        >
+          <div className="md:w-1/2">
+            <img
+              src="../assets/images/tx.jpg"
+              alt="Technical Support"
+              className="rounded-lg shadow-md w-full h-64 object-cover mb-4 md:mb-0"
+            />
+          </div>
+          <div className="md:w-1/2 md:pl-6 flex flex-col text-center md:text-left">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                Technical Support <span className="text-customTeal">and Consultancy</span>
+              </h2>
+              <p className="text-gray-700 mb-4">
+                Expert advice and support on land restoration projects, including technical guidance and project management.
+              </p>
+            </div>
             <Link
               to="/technicalAdvice"
-              className="bg-customTeal text-white font-medium px-6 py-3 w-1/2 mx-auto text-center rounded-full shadow-lg hover:bg-gray-700 transition"
+              className="bg-customTeal text-white font-medium px-6 py-3 rounded-full shadow-lg transition mt-6 mx-auto"
             >
               Read More
             </Link>
-          </div>
-          <div className="md:w-1/2 px-4">
-            <img src="../assets/images/tx.jpg" alt="Technical Support" className="rounded-lg shadow-lg w-full h-auto md:h-[300px] object-cover" />
           </div>
         </div>
       </div>

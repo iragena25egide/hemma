@@ -1,29 +1,6 @@
 import React from 'react';
-import AOS from 'aos'; 
+import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
-const TeamMemberCard = ({ name, role, imageSrc, description }) => {
-  return (
-    <div 
-      className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 cursor-pointer"
-      data-aos="fade-down"
-    >
-      <div className="w-32 h-32 bg-white rounded-full mx-auto mt-8">
-        <img
-          src={imageSrc}
-          alt={name}
-          className="w-full h-full rounded-full object-cover"
-        />
-      </div>
-      <div className="text-center p-6">
-        <h3 className="text-xl font-bold text-gray-900">{name}</h3>
-        <p className="text-gray-700">{role}</p>
-        <p className="text-gray-600 text-sm mt-2">{description}</p>
-      </div>
-    </div>
-  );
-};
 
 const TeamPage = () => {
   React.useEffect(() => {
@@ -35,80 +12,98 @@ const TeamPage = () => {
 
   return (
     <div className="bg-gray-100">
-    
+      {/* Hero Section */}
       <div
         className="relative w-full h-screen bg-cover bg-center"
         style={{ backgroundImage: `url('../assets/images/team1.jpg')` }}
       >
-       
         <div className="absolute inset-0 bg-customTeal bg-opacity-50 flex flex-col justify-center items-center text-center px-6">
-         
-          <h1 className="text-5xl font-bold text-white mb-6 leading-tight" data-aos="fade-down">
+          <h1 className="text-5xl font-bold text-white mb-6 leading-tight" data-aos="fade-down" style={{marginTop:'-100px'}}>
             MEET OUR TEAM
           </h1>
-         
           <p className="text-lg text-white max-w-3xl mb-6" data-aos="fade-up">
             Dedicated professionals, innovative thinkers, and experienced leaders committed to delivering excellence.
           </p>
-         
-         
         </div>
       </div>
 
-      {/* Team Members Section */}
-      <div className="py-12 max-w-7xl mx-auto px-6 lg:px-8" id="team">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">Our Dedicated Team</h2>
-
-        {/* Team Members */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {[
-            { name: 'John Doe', role: 'Secretary', imageSrc: '../assets/images/t1.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-            { name: 'Jane Smith', role: 'Project Manager', imageSrc: '../assets/images/t2.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-            { name: 'Alice Johnson', role: 'Project Director', imageSrc: '../assets/images/t3.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-            { name: 'Mark Brown', role: 'CEO', imageSrc: '../assets/images/t4.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-            { name: 'Emily Davis', role: 'Role 5', imageSrc: '../assets/images/t5.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-            { name: 'Michael Wilson', role: 'Role 6', imageSrc: '../assets/images/t6.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' }
-          ].map((member, index) => (
-            <TeamMemberCard
-              key={index}
-              name={member.name}
-              role={member.role}
-              imageSrc={member.imageSrc}
-              description={member.description}
+      {/* Featured CEO Section */}
+      <div className="py-16 max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-16">
+        {/* Image Section */}
+        <div
+          className="relative w-full md:w-1/2 flex justify-center"
+          data-aos="fade-right"
+        >
+          <div className="w-64 h-64 bg-white rounded-full overflow-hidden shadow-lg">
+            <img
+              src="../assets/images/ceo.png"
+              alt="CEO"
+              className="w-full h-full object-cover"
             />
-          ))}
+          </div>
         </div>
 
-        {/* Team Categories Section */}
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-8" data-aos="fade-up">Team Categories</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            {
-              title: 'Dedicated Professionals',
-              description:
-                'A team of highly trained specialists in customer service, sales, technical support, and data analysis.',
-            },
-            {
-              title: 'Innovative Thinkers',
-              description:
-                'Problem-solvers who leverage AI-powered tools, a cloud-based network, and analytics to deliver exceptional results.',
-            },
-            {
-              title: 'Experienced Leaders',
-              description:
-                'We foster a culture of teamwork and growth, ensuring our employees have the tools and support to excel.',
-            },
-          ].map((category, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg p-6 text-center transform transition-transform hover:scale-105 cursor-pointer"
-              data-aos="fade-up"
-            >
-              <h3 className="text-2xl font-bold text-gray-900">{category.title}</h3>
-              <p className="text-gray-700 mt-4">{category.description}</p>
-            </div>
-          ))}
+        {/* Text Section */}
+        <div className="w-full md:w-1/2" data-aos="fade-left">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center md:text-left"><span className='text-customTeal'>CEO - </span>Habimana Emmanuel</h2>
+          <p className="text-gray-700 leading-relaxed text-lg text-center md:text-left">
+          HEMMA produces and sells tree seedlings for agroforestry and forestry. It also sells fruit tree seedlings. It
+          provides trainings and technical support to farmers especially women it is a Rwandan-based company focused
+          on land restoration and sustainable agriculture. It enhance soil fertility, and promote sustainable agricultural
+          practices. The company seeks to improve environmental health while providing economic benefits to local
+          communities.
+          </p>
         </div>
+      </div>
+
+      {/* Team Categories Section */}
+      <div className="py-16 max-w-7xl mx-auto px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
+          <span className='text-customTeal'>Team </span>Categories
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  {[
+    {
+      title: (
+        <>
+          <span className="text-customTeal">Dedicated</span> Professionals
+        </>
+      ),
+      description:
+        'A team of highly trained specialists in customer service, sales, technical support, and data analysis.',
+    },
+    {
+      title: (
+        <>
+          <span className="text-customTeal">Innovative</span> Thinkers
+        </>
+      ),
+      description:
+        'Problem-solvers who leverage AI-powered tools, a cloud-based network, and analytics to deliver exceptional results.',
+    },
+    {
+      title: (
+        <>
+          <span className="text-customTeal">Experienced</span> Leaders
+        </>
+      ),
+      description:
+        'We foster a culture of teamwork and growth, ensuring our employees have the tools and support to excel.',
+    },
+  ].map((category, index) => (
+    <div
+      key={index}
+      className="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition-transform hover:scale-105 cursor-pointer"
+      data-aos="fade-up"
+    >
+      <h3 className="text-2xl font-bold mb-4">
+        {category.title}
+      </h3>
+      <p className="text-gray-700">{category.description}</p>
+    </div>
+  ))}
+</div>
+
       </div>
     </div>
   );
