@@ -182,7 +182,7 @@ const LandingPage = () => {
           future for all.
         </p>
 
-        <div className="mt-6 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+        <div className="mt-6 flex flex-row sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <Link
             to={'/about-Us'}
             className="bg-customTeal text-white font-medium px-6 py-3 rounded-full shadow-lg hover:bg-customTeal transition"
