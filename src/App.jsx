@@ -24,6 +24,7 @@ import PossibleSolutions from "./possible";  // Import PossibleSolutions
 import SolutionFirst from "./solution-first";
 import Location from "./location";
 import Benefits from "./benefit";
+import Offer from "./offer";
 
 
 function App() {
@@ -63,7 +64,7 @@ function App() {
               <AboutHemmaInvestment />
               <AboutContent />
               <AboutInvest />
-              <WhyChooseUs />
+              <Offer />
               <ChatBox />
               <Footer />
             </>

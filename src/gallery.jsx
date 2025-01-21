@@ -24,14 +24,24 @@ const Gallery = () => {
         </p>
       </div>
 
-      {/* Gallery Image */}
-      <div className="mt-12" data-aos="fade-up">
-        <img
-          src="../assets/images/gallery.png"
-          alt="Gallery"
-          className="w-full rounded-lg shadow-lg object-cover"
-        />
-      </div>
+     <div className='grid grid-cols-3'>
+        <div className='flex' data-aos="fade-down">
+            <img src="../assets/images/1.jpg" alt="" />
+        </div>
+        <div className='flex flex-col'>
+        
+        <div className='grid grid-cols-2 h-1/2' data-aos="fade-down">
+            <img src='../assets/images/5.jpg' className='h-full' />
+            <img src='../assets/images/2.jpg' className='h-full'/>
+        </div>
+        <div data-aos="fade-up">
+        <img src="../assets/images/3.jpg" alt="" />
+        </div>
+        </div>
+        <div className='flex' data-aos="fade-up">
+        <img src="../assets/images/4.jpg" alt="" />
+        </div>
+     </div>
     </section>
   );
 };

@@ -21,7 +21,7 @@ function Footer() {
                             <li><Link to={'/about-Us'} className="hover:underline">About Us</Link></li>
                             <li><Link to={'/services'} className="hover:underline">Services</Link></li>
                             <li><Link to={'/'} className="hover:underline">Articles</Link></li>
-                            <li><Link to={'/'} className="hover:underline">Solutions</Link></li>
+                            <li><Link to={'/possible-solutions'} className="hover:underline">Solutions</Link></li>
                         </ul>
                     </div>
                     <div className="mb-8 md:mb-0">

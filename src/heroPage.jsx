@@ -29,7 +29,7 @@ const LandingPage = () => {
       className="relative w-full min-h-screen bg-cover bg-center"
       style={{ backgroundImage: "url('../assets/images/hero.jpg')" }}
     >
-      <header className="absolute top-0 left-0 w-full p-4 sm:p-6 flex justify-between items-center bg-opacity-50 border-b border-gray-300">
+      <header className="absolute top-0 left-0 w-full p-2 sm:p-6 flex justify-between items-center bg-opacity-50 border-b border-gray-300">
         <div className="flex w-[20%] sm:w-[10%] lg:w-[8%]">
           <img src="../assets/images/real-white-logo.png" alt="Logo" className="w-full" />
         </div>
@@ -189,43 +189,46 @@ const LandingPage = () => {
           >
             About Us
           </Link>
-          <a
-            href="#"
+          <Link
+            to={"/services"}
             className="bg-white text-customTeal font-medium px-6 py-3 rounded-full shadow-lg hover:bg-gray-200 transition"
           >
             Learn More
-          </a>
+          </Link>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-lg p-3 flex justify-center items-center space-x-4 sm:space-x-10 w-11/12 sm:w-2/3 lg:w-2/4 max-w-4xl" >
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
-            10<span className="text-customTeal">+</span>
-          </h2>
-          <p className="text-gray-500">Years Experience</p>
-        </div>
-        <div className="border-l border-gray-300 h-12"></div>
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
-            5K<span className="text-customTeal">+</span>
-          </h2>
-          <p className="text-gray-500">Products</p>
-        </div>
-        <div className="border-l border-gray-300 h-12"></div>
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
-            5K<span className="text-customTeal">+</span>
-          </h2>
-          <p className="text-gray-500">Satisfied Clients</p>
-        </div>
-        <div className="border-l border-gray-300 h-12"></div>
-        <div className="text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
-            8<span className="text-customTeal">+</span>
-          </h2>
-          <p className="text-gray-500">Local Team Members</p>
-        </div>
-      </div>
+       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-lg p-3 flex justify-center  md:bottom-10 items-center space-x-4 sm:space-x-10 w-11/12 sm:w-2/3 lg:w-2/4 max-w-4xl mt-8 sm:mt-0">
+  <div className="text-center">
+    <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+      10<span className="text-customTeal">+</span>
+    </h2>
+    <p className="text-gray-500">Years Experience</p>
+  </div>
+  <div className="border-l border-gray-300 h-12"></div>
+  <div className="text-center">
+    <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+      5K<span className="text-customTeal">+</span>
+    </h2>
+    <p className="text-gray-500">Products</p>
+  </div>
+  <div className="border-l border-gray-300 h-12"></div>
+  <div className="text-center">
+    <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+      5K<span className="text-customTeal">+</span>
+    </h2>
+    <p className="text-gray-500">Satisfied Clients</p>
+  </div>
+  <div className="border-l border-gray-300 h-12"></div>
+  <div className="text-center">
+    <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+      8<span className="text-customTeal">+</span>
+    </h2>
+    <p className="text-gray-500">Local Team Members</p>
+  </div>
+</div>
+
+
+
       </div>
     </div>
   );

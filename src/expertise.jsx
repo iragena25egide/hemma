@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos"; 
 import "aos/dist/aos.css"; 
+import { Link } from "react-router-dom";
+
 
 const AboutSection = () => {
   useEffect(() => {
@@ -80,13 +82,13 @@ const AboutSection = () => {
       </div>
 
       <div className="mt-6 flex justify-center">
-        <a
-          href="#"
+        <Link
+          to={'/about-Us'}
           className="bg-customTeal text-white font-medium px-6 py-3 rounded-full shadow-lg hover:bg-customTeal transition"
           data-aos="fade-down"
         >
           More about us
-        </a>
+        </Link>
       </div>
     </section>
   );

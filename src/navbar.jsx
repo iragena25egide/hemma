@@ -32,7 +32,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="w-full bg-customTeal p-8 sticky top-0 z-50">
+    <header className="w-full bg-customTeal p-4 sticky top-0 z-50">
       {/* Navbar container */}
       <div className="container mx-auto flex justify-between items-center" data-aos="fade-down">
         {/* Logo */}
