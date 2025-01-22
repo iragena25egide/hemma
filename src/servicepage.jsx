@@ -109,7 +109,7 @@ const Servicepage = () => {
         >
           <div className="md:w-1/2">
             <img
-              src="../assets/images/tx.jpg"
+              src="../assets/images/tech3.jpeg"
               alt="Technical Support"
               className="rounded-lg shadow-md w-full h-64 object-cover mb-4 md:mb-0"
             />

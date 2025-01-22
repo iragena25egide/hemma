@@ -22,7 +22,7 @@ const AboutContent = () => {
             </div>
             <div className="lg:w-1/3 lg:pl-8" data-aos="fade-down">
               <img
-                src="../assets/images/logo.png"
+                src="../assets/images/gree-real-logo.png"
                 alt="HEMMA Logo"
                 className="rounded-lg shadow-md mx-auto lg:mx-0"
               />

@@ -9,7 +9,7 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Jean-Marie Nshimiyimana",
+      name: "James Rukundo",
       title: "Masaka farm Manager",
       image: "../assets/images/p2.jpg",
       text: "HEMMA Investment's tree planting project has greatly improved my farm's productivity. The training they provided helped me adopt sustainable farming practices that have truly made a difference.",
@@ -18,7 +18,7 @@ const Testimonials = () => {
     {
       name: "Emmanuel Mugisha",
       title: "Human Accounts Supervisor",
-      image: "../assets/images/p2.jpg", 
+      image: "../assets/images/p4.jpg", 
       text: "The restoration of our community land has brought us not only better soil quality but also more income from our crops. HEMMA's approach is both effective and easy to follow.",
       rating: 5
     },
@@ -32,7 +32,7 @@ const Testimonials = () => {
     {
       name: "Claudine Uwimana",
       title: "Rwamagana GreenLand Manager",
-      image: "../assets/images/p4.jpg", 
+      image: "../assets/images/t1.jpg", 
       text: "Working with HEMMA has been a game-changer. The support and knowledge they shared on soil health and organic farming boosted our yields and made farming more profitable.",
       rating: 5
     },

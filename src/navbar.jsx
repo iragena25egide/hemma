@@ -77,9 +77,9 @@ const Navbar = () => {
                     <Link to={'/benefit'} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
                       Project Beneficiaries
                     </Link>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed">
+                    <Link to={'/quote'} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal ">
                       Get a quote
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -132,30 +132,35 @@ const Navbar = () => {
           </Link>
 
           {/* Dropdown for "More" menu in mobile */}
-          <div className="relative group">
-            <button className="font-medium flex items-center hover:text-gray-300">
-              More <FaAngleDown className="ml-1" />
-            </button>
-            <div className="absolute hidden group-hover:block bg-white text-black mt-[0px] rounded-lg shadow-lg w-36"> {/* Adjusted with mt-[8px] */}
-              <div className="absolute w-56 rounded-md shadow-lg bg-customTeal text-white border border-white">
-                <div className="py-1">
-                 
-                  <Link to={'/location'} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
-                    Location
-                  </Link>
-                  <Link to={"/possible-solutions"} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
-                    Possible Solutions
-                  </Link>
-                  <Link to={"/benefit"} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
-                    Project Beneficiaries
-                  </Link>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed">
-                    Get a quote
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Dropdown for "More" menu in mobile */}
+       {/* Dropdown for "More" menu in mobile */}
+<div className="relative group" >
+  <button className="font-medium flex items-center hover:text-gray-300">
+    More <FaAngleDown className="ml-1" />
+  </button>
+  <div className="absolute hidden group-hover:block bg-white text-black mt-1 rounded-lg shadow-lg w-36 sm:w-48 md:w-56">
+    {/* Dropdown container that gets centered and adjusts padding for left side */}
+    <div className="absolute left-1/2 transform -translate-x-1/2 w-full px-4 sm:px-6 md:px-8 rounded-md shadow-lg bg-customTeal text-white border border-white">
+      <div className="py-1">
+        <Link to={'/location'} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
+          Location
+        </Link>
+        <Link to={"/possible-solutions"} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
+          Possible Solutions
+        </Link>
+        <Link to={"/benefit"} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
+          Project Beneficiaries
+        </Link>
+        <Link to={"/quote"} className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal">
+          Get a quote
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
         </div>
       )}
     </header>

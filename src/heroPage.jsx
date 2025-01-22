@@ -82,12 +82,12 @@ const LandingPage = () => {
         >
           Project Beneficiaries
         </Link>
-        <a
-          href="#"
-          className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
+        <Link
+          to={'/quote'}
+          className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
         >
           Get a quote
-        </a>
+        </Link>
       </div>
     </div>
   </div>
@@ -156,12 +156,12 @@ const LandingPage = () => {
                     >
                       Project Beneficiaries
                     </Link>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
+                    <Link
+                      to={"/quote"}
+                      className="block px-4 py-2 text-sm hover:bg-fuchsia-50 hover:text-customTeal"
                     >
                       Get a quote
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -170,8 +170,8 @@ const LandingPage = () => {
         </div>
       )}
 
-      <div className="flex flex-col items-center justify-center text-center min-h-screen px-6" >
-        <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold" data-aos="fade-down">
+      <div className="flex flex-col items-center justify-center text-center min-h-screen px-6"  >
+        <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold" data-aos="fade-down" >
           HEMMA INVESTMENT
         </h1>
         <p className="text-white text-lg sm:text-xl mt-4 max-w-2xl" data-aos="fade-up">

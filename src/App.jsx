@@ -25,6 +25,8 @@ import SolutionFirst from "./solution-first";
 import Location from "./location";
 import Benefits from "./benefit";
 import Offer from "./offer";
+import GetQuote from "./quote";
+
 
 
 function App() {
@@ -208,6 +210,22 @@ function App() {
               <Footer />
             </>
         </>}/>
+        <Route 
+        path="/quote"
+        element={<>
+        
+        <>
+              <Helmet>
+                <link rel="icon" href="../assets/images/logo.png" />
+                <title>GET QUOTE || HEMMA</title>
+              </Helmet>
+              <Navbar />
+             <GetQuote />
+              <ChatBox />
+              <Footer />
+            </>
+        </>}/>
+
         
       </Routes>
     </BrowserRouter>

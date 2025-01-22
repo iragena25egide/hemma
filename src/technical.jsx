@@ -19,7 +19,7 @@ const TechnicalSupportConsultancy = () => {
         {/* Left Image Section */}
         <div className="w-full md:w-1/2">
           <img
-            src="../assets/images/tx.jpg"
+            src="../assets/images/tech3.jpeg"
             alt="Technical Support"
             className="w-full h-64 md:h-[900px] object-cover object-center rounded-t-lg md:rounded-l-lg md:rounded-t-none"
           
